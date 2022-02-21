@@ -11,7 +11,7 @@ function setHighValue(array $boursa){
     return $tem_exchange;
 }
 
-$bourse_values = [5,7,21,2,8,9,4,19];
+$bourse_values = [5,7,21,2,8,9,4,20];
 $str_values = setHighValue($bourse_values);
 $str_values = rtrim($str_values, ',');
 $arr = explode(',', $str_values);
@@ -20,5 +20,14 @@ function printArray ( array $arr ) {
         echo $arr[$i].' , ';
     }
 }
+function getMaxNum(array $arrNum){
+    $max = $arrNum[0];
+    for($i=0; $i<count($arrNum); $i++){
+        if($max < $arrNum[$i]){
+            $max = $arrNum[$i];
+        }
+    }
+    return $max;
+}
 echo 'In the following array: ';
-echo printArray($bourse_values).' the max value is '.(max($arr));
+echo printArray($bourse_values).' the max value is ' .(getMaxNum($arr));
